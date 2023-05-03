@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  locust:
+    image: locustio/locust
+    command: -f /mnt/locust-tasks/tasks.py --host=http://localhost:8080
+    ports:
+      - "8089:8089"
+    volumes:
+      - ./locust-tasks:/mnt/locust-tasks
